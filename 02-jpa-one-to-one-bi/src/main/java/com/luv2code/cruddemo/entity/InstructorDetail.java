@@ -1,5 +1,4 @@
 package com.luv2code.cruddemo.entity;
-
 import jakarta.persistence.*;
 
 @Entity
@@ -24,9 +23,8 @@ public class InstructorDetail {
     @Column(name = "hobby")
     private String hobby;
 
+    @OneToOne(mappedBy = "instructorDetail", cascade = {CascadeType.DETACH, CascadeType.MERGE,CascadeType.REFRESH})
     private Instructor instructor;
-
-
 
     public InstructorDetail(){
 
